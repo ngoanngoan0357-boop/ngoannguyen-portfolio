@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Thị Ngoan | Portfolio Sinh Viên Tiếng Trung Thương Mại (FTU & Snowy)</title>
+  <meta name="description" content="Hồ sơ học tập và rèn luyện của Nguyễn Thị Ngoan - Sinh viên ngành Tiếng Trung thương mại, Trường Đại học Ngoại thương (FTU, Khóa 2024 - 2028).">
+  <meta name="keywords" content="Nguyễn Thị Ngoan, Tiếng Trung thương mại, Đại học Ngoại thương, FTU, HSK6, HSKK CC, Milou, Tintin portfolio">
+  <meta name="author" content="Nguyễn Thị Ngoan">
+
+  <!-- Favicon Tintin Paw -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+  <!-- Google Fonts: Bangers (Comic), Outfit (Modern body), Playfair Display (Classic European Chapter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="tintin-theme">
+  <!-- Retro Comic Halftone & Paper Texture Overlay -->
+  <div class="comic-paper-overlay" aria-hidden="true"></div>
+
+  <!-- Comic Header Strip -->
+  <header class="comic-header" id="comic-header">
+    <div class="header-container">
+      <div class="vintage-badge">
+        <span class="badge-edition">HÀNH TRÌNH HỌC TẬP • 2024 - 2028</span>
+        <span class="badge-tag">TIẾNG TRUNG THƯƠNG MẠI</span>
+      </div>
+
+      <div class="header-main-title">
+        <a href="#hero" class="brand-link" id="brand-home-link">
+          <span class="brand-pre">LES AVENTURES DE</span>
+          <span class="brand-name">NGUYỄN THỊ NGOAN</span>
+          <span class="brand-companion">& MILOU (SNOWY) 🐾</span>
+        </a>
+      </div>
+
+      <!-- Control Bar: Sound & Tour Guide -->
+      <div class="header-actions">
+        <button id="sound-toggle-btn" class="comic-btn btn-sound" title="Bật/Tắt âm thanh tiếng chó sủa" aria-label="Bật hoặc tắt âm thanh tiếng chó sủa">
+          <span class="sound-icon" id="sound-icon">🔊</span>
+          <span class="sound-label" id="sound-label">Tiếng Sủa: BẬT</span>
+        </button>
+        <button id="test-bark-btn" class="comic-btn btn-bark-test" title="Bấm để nghe Snowy sủa!">
+          <span>🐕 Kêu 'Gâu Gâu'!</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Bar styled as Comic Chapter Tabs -->
+    <nav class="comic-nav" aria-label="Điều hướng các vùng thám hiểm" id="main-navigation">
+      <div class="nav-container">
+        <a href="#hero" class="nav-link active" data-region="hero" id="nav-hero">
+          <span class="nav-num">★</span> Trang Bìa
+        </a>
+        <a href="#interactive-map" class="nav-link" data-region="map" id="nav-map">
+          <span class="nav-num">🗺️</span> Bản Đồ Thám Hiểm
+        </a>
+        <a href="#vung-namdinh" class="nav-link" data-region="namdinh" id="nav-namdinh">
+          <span class="nav-num">1</span> Vùng Nam Định
+        </a>
+        <a href="#vung-ftu" class="nav-link" data-region="ftu" id="nav-ftu">
+          <span class="nav-num">2</span> Đại Học Ngoại Thương (FTU)
+        </a>
+        <a href="#vung-hsk6" class="nav-link" data-region="hsk6" id="nav-hsk6">
+          <span class="nav-num">3</span> Năng Lực HSK 6
+        </a>
+        <a href="#vung-contact" class="nav-link" data-region="contact" id="nav-contact">
+          <span class="nav-num">4</span> Trạm Bưu Điện Liên Hệ
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sound Visualizer Toast (Appears when Snowy barks) -->
+  <div id="bark-bubble-fx" class="bark-bubble-fx" aria-live="polite">
+    <span class="bark-text" id="bark-text">WOOF! WOOF!</span>
+  </div>
+
+  <main id="main-content">
+    <!-- SECTION 1: HERO ALBUM COVER -->
+    <section class="comic-section hero-section" id="hero">
+      <div class="comic-container">
+        <div class="album-cover-frame">
+          <div class="album-spine-ribbon">HÀNH TRÌNH HỌC TẬP • TIẾNG TRUNG THƯƠNG MẠI (2024 - 2028)</div>
+
+          <div class="hero-grid">
+            <!-- Cover Artwork Panel -->
+            <div class="hero-artwork-col">
+              <div class="comic-panel-box hero-panel-polaroid">
+                <div class="panel-tape"></div>
+                <div class="cover-image-wrapper">
+                  <img src="assets/images/hero-cover.jpg" alt="Bìa truyện tranh phong cách Tintin: Nguyễn Thị Ngoan cùng chú chó Milou lên đường thám hiểm" class="hero-cover-img" id="hero-main-cover-img" loading="eager">
+                  <div class="cover-overlay-tag">
+                    <span>MYSTÈRE À L'ORIENT</span>
+                  </div>
+                </div>
+                <div class="caption-note">
+                  <p class="caption-handwritten">"Hành trình nỗ lực học hỏi, rèn luyện ngôn ngữ và tích lũy kiến thức cùng người bạn đồng hành Milou!"</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Overview & Hero Details -->
+            <div class="hero-content-col">
+              <div class="speech-intro-bubble">
+                <div class="bubble-speaker">
+                  <span class="speaker-tag">MILOU (SNOWY) CHÀO BẠN:</span>
+                  <span class="speech-quote">"Gâu gâu! Rất vui được chào đón bạn ghé thăm trang nhật ký học tập của cô chủ Ngoan!"</span>
+                </div>
+              </div>
+
+              <div class="profile-header-card">
+                <div class="tag-row">
+                  <span class="badge-pill bg-red">ĐẠI HỌC NGOẠI THƯƠNG (FTU)</span>
+                  <span class="badge-pill bg-yellow">HSK 6 • HSKK CAO CẤP</span>
+                  <span class="badge-pill bg-blue">GPA 3.62 / 4.0</span>
+                </div>
+
+                <h1 class="hero-title" id="candidate-name">
+                  Nguyễn Thị Ngoan
+                </h1>
+                <p class="hero-subtitle">
+                  Sinh Viên Ngành Tiếng Trung Thương Mại • Đại Học Ngoại Thương (FTU, Khóa 2024 - 2028)
+                </p>
+                <p class="hero-bio-lead">
+                  Sinh viên chuyên ngành Tiếng Trung thương mại (niên khóa 2024 - 2028) tại Trường Đại học Ngoại thương. Với nền tảng tiếng Trung đạt <strong>HSK 6 & HSKK Cao Cấp</strong> cùng thái độ cầu thị, chăm chỉ và có trách nhiệm, tôi luôn mong muốn tìm kiếm cơ hội thực tập để được rèn luyện, tích lũy kinh nghiệm thực tế và đóng góp tích cực cho doanh nghiệp.
+                </p>
+
+                <!-- Quick Highlights Grid -->
+                <div class="quick-stats-grid">
+                  <div class="stat-box">
+                    <span class="stat-icon">🎓</span>
+                    <div class="stat-info">
+                      <span class="stat-title">Ngoại Thương (FTU)</span>
+                      <span class="stat-desc">Niên khóa 2024 - 2028 • MSV: 2411720029</span>
+                    </div>
+                  </div>
+
+                  <div class="stat-box">
+                    <span class="stat-icon">📈</span>
+                    <div class="stat-info">
+                      <span class="stat-title">GPA 3.62 / 4.0</span>
+                      <span class="stat-desc">Học lực Xuất Sắc • Nỗ lực bền bỉ</span>
+                    </div>
+                  </div>
+
+                  <div class="stat-box">
+                    <span class="stat-icon">🇨🇳</span>
+                    <div class="stat-info">
+                      <span class="stat-title">HSK 6 & HSKK CC</span>
+                      <span class="stat-desc">Chứng chỉ Hán ngữ Quốc tế</span>
+                    </div>
+                  </div>
+
+                  <div class="stat-box">
+                    <span class="stat-icon">🧭</span>
+                    <div class="stat-info">
+                      <span class="stat-title">Nam Định ➔ Hà Nội</span>
+                      <span class="stat-desc">Chùa Láng, Láng Thượng, Đống Đa</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Call to action buttons -->
+                <div class="hero-actions-row">
+                  <button class="comic-btn btn-primary" id="start-snowy-tour-btn">
+                    <span class="btn-paw">🐾</span> Cùng Snowy Ghé Thăm Từng Trạm!
+                  </button>
+                  <a href="#interactive-map" class="comic-btn btn-secondary" id="open-map-btn">
+                    <span>🗺️ Mở Bản Đồ Hành Trình</span>
+                  </a>
+                  <a href="#vung-contact" class="comic-btn btn-outline" id="quick-contact-btn">
+                    <span>✉️ Thông Tin Liên Hệ</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BẢN ĐỒ THÁM HIỂM TƯƠNG TÁC (INTERACTIVE ADVENTURE MAP) -->
+    <section class="comic-section map-section" id="interactive-map">
+      <div class="comic-container">
+        <div class="section-title-wrap">
+          <div class="chapter-badge">CHẶNG ĐƯỜNG RÈN LUYỆN</div>
+          <h2 class="comic-section-heading">BẢN ĐỒ HÀNH TRÌNH CÙNG CHÚ CHÓ SNOWY</h2>
+          <p class="section-subtext">
+            Bấm vào từng trạm trên bản đồ bên dưới để cùng <strong>chú chó Snowy (Milou)</strong> ghé thăm từng chặng đường học tập!
+          </p>
+        </div>
+
+        <div class="map-board-container">
+          <div class="map-artwork-wrapper">
+            <img src="assets/images/adventure-map.jpg" alt="Bản đồ hành trình theo phong cách Herge Tintin: Nam Định, FTU Hà Nội, Hán ngữ HSK6, Trạm liên hệ" class="map-background-img" id="adventure-map-img">
+
+            <!-- Interactive Map Waypoint Hotspots -->
+            <div class="map-hotspots-layer" id="map-hotspots-layer">
+              <!-- Waypoint 1: Nam Định -->
+              <button class="map-pin pin-namdinh" data-target="vung-namdinh" id="pin-namdinh" aria-label="Đi đến Vùng 1: Nam Định">
+                <span class="pin-marker">📍</span>
+                <span class="pin-tag">Trạm 1: Nam Định (Quê Hương)</span>
+                <span class="pin-pulse"></span>
+              </button>
+
+              <!-- Waypoint 2: FTU Hanoi -->
+              <button class="map-pin pin-ftu" data-target="vung-ftu" id="pin-ftu" aria-label="Đi đến Vùng 2: Trường Đại Học Ngoại Thương FTU">
+                <span class="pin-marker">🏛️</span>
+                <span class="pin-tag">Trạm 2: ĐH Ngoại Thương (Chùa Láng)</span>
+                <span class="pin-pulse"></span>
+              </button>
+
+              <!-- Waypoint 3: HSK6 Chine -->
+              <button class="map-pin pin-hsk6" data-target="vung-hsk6" id="pin-hsk6" aria-label="Đi đến Vùng 3: Năng Lực Hán Ngữ HSK6">
+                <span class="pin-marker">⛩️</span>
+                <span class="pin-tag">Trạm 3: Năng Lực HSK 6 & HSKK CC</span>
+                <span class="pin-pulse"></span>
+              </button>
+
+              <!-- Waypoint 4: Poste de Telegraphe -->
+              <button class="map-pin pin-contact" data-target="vung-contact" id="pin-contact" aria-label="Đi đến Vùng 4: Trạm Liên Hệ">
+                <span class="pin-marker">📮</span>
+                <span class="pin-tag">Trạm 4: Trạm Liên Hệ</span>
+                <span class="pin-pulse"></span>
+              </button>
+
+              <!-- Dynamic Snowy Marker moving along the map! -->
+              <div class="snowy-map-avatar" id="snowy-map-avatar" style="top: 68%; left: 24%;">
+                <div class="snowy-avatar-bubble">
+                  <span id="snowy-avatar-bubble-text">Gâu! Bấm vào tôi hoặc các trạm nhé!</span>
+                </div>
+                <img src="assets/images/snowy-guide.jpg" alt="Snowy trên bản đồ" class="snowy-map-mini-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Region Navigation Selector Strip -->
+          <div class="map-cards-selector">
+            <div class="station-card active" data-target="vung-namdinh" id="card-sel-namdinh">
+              <div class="st-num">TRẠM 01</div>
+              <div class="st-title">Nam Định</div>
+              <div class="st-desc">Mảnh đất hiếu học & tinh thần tự lập</div>
+              <button class="st-jump-btn">Dẫn đường 🐾</button>
+            </div>
+
+            <div class="station-card" data-target="vung-ftu" id="card-sel-ftu">
+              <div class="st-num">TRẠM 02</div>
+              <div class="st-title">FTU & Chùa Láng</div>
+              <div class="st-desc">ĐH Ngoại Thương • Khóa 2024 - 2028</div>
+              <button class="st-jump-btn">Dẫn đường 🐾</button>
+            </div>
+
+            <div class="station-card" data-target="vung-hsk6" id="card-sel-hsk6">
+              <div class="st-num">TRẠM 03</div>
+              <div class="st-title">Năng Lực HSK 6</div>
+              <div class="st-desc">HSK 6 & HSKK CC • Nền tảng Hán ngữ</div>
+              <button class="st-jump-btn">Dẫn đường 🐾</button>
+            </div>
+
+            <div class="station-card" data-target="vung-contact" id="card-sel-contact">
+              <div class="st-num">TRẠM 04</div>
+              <div class="st-title">Trạm Liên Hệ</div>
+              <div class="st-desc">Zalo: 0357296623 • Gmail</div>
+              <button class="st-jump-btn">Dẫn đường 🐾</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: VÙNG 1 - NAM ĐỊNH (KHỞI NGUỒN HÀNH TRÌNH) -->
+    <section class="comic-section region-section" id="vung-namdinh">
+      <div class="comic-container">
+        <!-- Comic Vignette Banner -->
+        <div class="comic-panel-frame">
+          <div class="comic-narrator-box">
+            <span class="narrator-time">VÙNG ĐẤT 1 • MIỀN QUÊ NAM ĐỊNH BÌNH DỊ...</span>
+            <p>
+              "Mảnh đất Nam Định giàu truyền thống hiếu học là nơi tôi sinh ra và lớn lên. Đó là điểm tựa nuôi dưỡng tính kiên trì, sự cẩn thận và tinh thần tự lập ngay từ những năm tháng đầu đời."
+            </p>
+          </div>
+
+          <div class="comic-strip-layout">
+            <!-- Left panel: Story card -->
+            <div class="comic-box panel-light">
+              <div class="panel-header-bar">
+                <span class="panel-chapter-no">TRẠM 1.1</span>
+                <span class="panel-title">CỘI NGUỒN VÀ NỀN TẢNG</span>
+              </div>
+              <div class="panel-body">
+                <div class="vignette-icon-circle">
+                  <span>🌾</span>
+                </div>
+                <h3 class="panel-h3">Quê Quán: Nam Định</h3>
+                <p class="panel-para">
+                  Sinh ra và lớn lên tại Nam Định — mảnh đất giàu truyền thống hiếu học và tinh thần bền bỉ. Môi trường quê hương và gia đình đã giúp tôi rèn luyện:
+                </p>
+                <ul class="comic-bullet-list">
+                  <li><strong>Sự chỉn chu & cẩn thận:</strong> Luôn nỗ lực hoàn thành tốt từng nhiệm vụ và kế hoạch học tập đã đề ra.</li>
+                  <li><strong>Tính tự lập & trách nhiệm:</strong> Khả năng thích nghi và chủ động sắp xếp cuộc sống khi học tập xa nhà tại Hà Nội.</li>
+                  <li><strong>Thái độ khiêm tốn & cầu tiến:</strong> Luôn lắng nghe, học hỏi từ thầy cô, bạn bè và sẵn sàng khắc phục những thiếu sót của bản thân.</li>
+                </ul>
+
+                <div class="dialogue-balloon-wrap">
+                  <div class="dialogue-balloon">
+                    <span class="balloon-speaker">Milou (Snowy) ngửi ngửi mặt đất:</span>
+                    <p>"Gâu! Quê hương Nam Định thật thanh bình! Cô chủ luôn trân trọng những giá trị giản dị và ấm áp từ gia đình!"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right panel: Interactive Fact Card -->
+            <div class="comic-box panel-tintin-yellow">
+              <div class="panel-header-bar">
+                <span class="panel-chapter-no">TRẠM 1.2</span>
+                <span class="panel-title">HÀNH TRÌNH TÍCH LŨY</span>
+              </div>
+              <div class="panel-body">
+                <div class="travel-diary-page">
+                  <h4 class="diary-title">TRÍCH NHẬT KÝ HÀNH TRÌNH</h4>
+                  <div class="diary-entry">
+                    <span class="diary-date">🧭 Ghi chú chuyển tiếp:</span>
+                    <p>
+                      Mang theo tinh thần chăm chỉ của quê hương và niềm yêu thích ngôn ngữ, tôi đã nỗ lực để trở thành sinh viên chuyên ngành Tiếng Trung thương mại tại Trường Đại học Ngoại thương (Hà Nội).
+                    </p>
+                  </div>
+
+                  <div class="stamp-collection">
+                    <div class="retro-stamp stamp-namdinh">
+                      <span class="stamp-icon">⚓</span>
+                      <span class="stamp-text">NAM ĐỊNH</span>
+                      <span class="stamp-val">10c</span>
+                    </div>
+                    <div class="retro-stamp stamp-express">
+                      <span class="stamp-icon">🚀</span>
+                      <span class="stamp-text">EXPRESS</span>
+                      <span class="stamp-val">FTU</span>
+                    </div>
+                  </div>
+
+                  <div class="region-next-action">
+                    <button class="comic-btn btn-sm btn-guide-next" data-next="vung-ftu">
+                      <span>Tiếp tục đến Trạm 2: ĐH Ngoại Thương ➔</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: VÙNG 2 - ĐẠI HỌC NGOẠI THƯƠNG & CHÙA LÁNG -->
+    <section class="comic-section region-section" id="vung-ftu">
+      <div class="comic-container">
+        <div class="comic-panel-frame">
+          <div class="comic-narrator-box narrator-ftu">
+            <span class="narrator-time">VÙNG ĐẤT 2 • THỦ ĐÔ HÀ NỘI & ĐẠI HỌC NGOẠI THƯƠNG (FTU)...</span>
+            <p>
+              "Bước chân vào Trường Đại học Ngoại Thương (FTU) tại con phố Chùa Láng, một môi trường năng động đã mở ra, mang đến cho tôi cơ hội quý báu để trau dồi tri thức chuyên môn và rèn giũa kỹ năng thực tế."
+            </p>
+          </div>
+
+          <div class="ftu-showcase-grid">
+            <!-- Left Info Panel -->
+            <div class="comic-box panel-ftu-red">
+              <div class="panel-header-bar bar-dark">
+                <span class="panel-chapter-no">HỒ SƠ HỌC VẤN</span>
+                <span class="panel-title">ĐẠI HỌC NGOẠI THƯƠNG (FTU)</span>
+              </div>
+              <div class="panel-body">
+                <div class="badge-ftu-crest">
+                  <div class="crest-symbol">🎓</div>
+                  <div class="crest-text">
+                    <h4>TRƯỜNG ĐẠI HỌC NGOẠI THƯƠNG</h4>
+                    <span>Foreign Trade University • Hanoi</span>
+                  </div>
+                </div>
+
+                <div class="cv-data-table">
+                  <div class="data-row">
+                    <span class="data-label">Họ và tên:</span>
+                    <span class="data-value highlight">Nguyễn Thị Ngoan</span>
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label">Niên khóa:</span>
+                    <span class="data-value">Khóa 63 • Niên khóa 2024 - 2028</span>
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label">Mã sinh viên (MSV):</span>
+                    <span class="data-value code-font">2411720029</span>
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label">Chuyên ngành:</span>
+                    <span class="data-value bold-blue">Tiếng Trung Thương Mại</span>
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label">Điểm trung bình tích lũy:</span>
+                    <span class="data-value gpa-score">GPA: 3.62 / 4.0</span>
+                  </div>
+                  <div class="data-row">
+                    <span class="data-label">Tạm trú hiện tại:</span>
+                    <span class="data-value">Chùa Láng, Láng Thượng, Đống Đa, Hà Nội</span>
+                  </div>
+                </div>
+
+                <div class="gpa-gauge-card">
+                  <div class="gauge-header">
+                    <span>Xếp Loại Học Lực: Xuất Sắc</span>
+                    <span>3.62 / 4.0</span>
+                  </div>
+                  <div class="gauge-bar-track">
+                    <div class="gauge-bar-fill" style="width: 90.5%;"></div>
+                  </div>
+                  <span class="gauge-caption">Kết quả phản ánh sự tập trung, chăm chỉ và thái độ học tập nghiêm túc trong từng môn học tại FTU.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Info Panel: FTU Environment & Attributes -->
+            <div class="comic-box panel-light">
+              <div class="panel-header-bar">
+                <span class="panel-chapter-no">MÔI TRƯỜNG FTU</span>
+                <span class="panel-title">MỤC TIÊU RÈN LUYỆN</span>
+              </div>
+              <div class="panel-body">
+                <p class="ftu-description">
+                  Môi trường học tập tại Đại học Ngoại thương giúp tôi tiếp thu kiến thức nền tảng và rèn luyện tác phong làm việc nghiêm túc:
+                </p>
+
+                <div class="feature-stripes">
+                  <div class="ftu-feature-item">
+                    <span class="feature-icon">📚</span>
+                    <div class="feature-text">
+                      <h5>Kiến Thức Tiếng Trung & Thương Mại</h5>
+                      <p>Chăm chỉ tiếp thu các môn chuyên ngành tiếng Trung, bước đầu nắm vững các kiến thức cơ bản về kinh tế và thương mại quốc tế.</p>
+                    </div>
+                  </div>
+
+                  <div class="ftu-feature-item">
+                    <span class="feature-icon">🌏</span>
+                    <div class="feature-text">
+                      <h5>Giao Tiếp & Tìm Hiểu Văn Hóa</h5>
+                      <p>Yêu thích tìm hiểu văn hóa, trau dồi vốn từ ngữ và học hỏi thói quen giao tiếp lịch sự trong môi trường học thuật cũng như kinh doanh.</p>
+                    </div>
+                  </div>
+
+                  <div class="ftu-feature-item">
+                    <span class="feature-icon">💡</span>
+                    <div class="feature-text">
+                      <h5>Tinh Thần Cầu Thị & Học Hỏi</h5>
+                      <p>Làm việc cẩn thận, có trách nhiệm với nhiệm vụ được giao, luôn sẵn sàng lắng nghe góp ý và học hỏi kiến thức thực tế mới.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dialogue-balloon-wrap">
+                  <div class="dialogue-balloon balloon-blue">
+                    <span class="balloon-speaker">Milou (Snowy) giơ chân chào:</span>
+                    <p>"Gâu gâu! Mỗi ngày tại FTU, cô chủ luôn chăm chỉ đến lớp, đọc thêm tài liệu để tích lũy kiến thức từng chút một!"</p>
+                  </div>
+                </div>
+
+                <div class="region-next-action">
+                  <button class="comic-btn btn-sm btn-guide-next" data-next="vung-hsk6">
+                    <span>Tiếp tục đến Trạm 3: Năng Lực HSK 6 ➔</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: VÙNG 3 - NĂNG LỰC HÁN NGỮ HSK 6 & HSKK CAO CẤP -->
+    <section class="comic-section region-section" id="vung-hsk6">
+      <div class="comic-container">
+        <div class="comic-panel-frame">
+          <div class="comic-narrator-box narrator-orient">
+            <span class="narrator-time">VÙNG ĐẤT 3 • NĂNG LỰC HÁN NGỮ HSK 6 & HSKK CAO CẤP...</span>
+            <p>
+              "Thông qua quá trình kiên trì tự học và rèn luyện nghiêm túc, tôi đã đạt được chứng chỉ HSK 6 và HSKK Cao Cấp. Đây là nền tảng ban đầu để tôi tiếp tục nỗ lực học hỏi sâu hơn và ứng dụng vào thực tiễn."
+            </p>
+          </div>
+
+          <!-- Highlight Certificates Banner -->
+          <div class="cert-showcase-row">
+            <div class="cert-gold-card">
+              <div class="cert-ribbon-tag">CHỨNG CHỈ QUỐC TẾ</div>
+              <div class="cert-seal">💮</div>
+              <h3 class="cert-main-name">HSK 6 (HÀN NGỮ CẤP 6)</h3>
+              <p class="cert-sub">Khung Đánh Giá Năng Lực Tiếng Hán Quốc Tế (Cấp độ 6)</p>
+              <div class="cert-divider"></div>
+              <ul class="cert-perks">
+                <li>✓ Vốn từ vựng tương đương <strong>5.000+ từ vựng & thuật ngữ</strong> tiếng Trung.</li>
+                <li>✓ Đọc hiểu các văn bản, tài liệu học thuật và tin tức kinh tế - thương mại cơ bản.</li>
+                <li>✓ Rèn luyện tính cẩn thận trong việc tra cứu thuật ngữ, hỗ trợ dịch thuật và tổng hợp tài liệu.</li>
+              </ul>
+            </div>
+
+            <div class="cert-gold-card cert-hskk">
+              <div class="cert-ribbon-tag tag-blue">KHẢO THÍ KHẨU NGỮ</div>
+              <div class="cert-seal">🗣️</div>
+              <h3 class="cert-main-name">HSKK CAO CẤP (HSKK CC)</h3>
+              <p class="cert-sub">Khảo Thí Khẩu Ngữ Tiếng Hán Quốc Tế (Trình Độ Cao Cấp)</p>
+              <div class="cert-divider"></div>
+              <ul class="cert-perks">
+                <li>✓ Rèn luyện khả năng phát âm chuẩn, diễn đạt ý kiến mạch lạc và tự nhiên.</li>
+                <li>✓ Tự tin trao đổi thông tin trong học tập và các tình huống giao tiếp thông thường.</li>
+                <li>✓ Tinh thần cầu thị, chủ động lắng nghe để ngày càng hoàn thiện phản xạ khẩu ngữ.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Core Competencies Grid -->
+          <div class="skills-comic-grid">
+            <div class="skill-card-panel">
+              <div class="skill-icon-wrap">📑</div>
+              <h4 class="skill-title">Biên Dịch & Xử Lý Tài Liệu Tiếng Trung</h4>
+              <p class="skill-desc">Hỗ trợ tra cứu, đối chiếu thuật ngữ, dịch thuật văn bản và chứng từ thương mại cơ bản một cách cẩn thận.</p>
+            </div>
+
+            <div class="skill-card-panel">
+              <div class="skill-icon-wrap">🎙️</div>
+              <h4 class="skill-title">Giao Tiếp & Ứng Xử Tiếng Trung</h4>
+              <p class="skill-desc">Giao tiếp lễ phép, rõ ràng, luôn biết lắng nghe và phối hợp hòa đồng cùng tập thể.</p>
+            </div>
+
+            <div class="skill-card-panel">
+              <div class="skill-icon-wrap">🌐</div>
+              <h4 class="skill-title">Tìm Kiếm & Khai Thác Thông Tin</h4>
+              <p class="skill-desc">Biết cách sử dụng các công cụ tìm kiếm tiếng Trung để tra cứu thông tin sản phẩm và tư liệu cần thiết.</p>
+            </div>
+
+            <div class="skill-card-panel">
+              <div class="skill-icon-wrap">💬</div>
+              <h4 class="skill-title">Tinh Thần Trách Nhiệm & Làm Việc Nhóm</h4>
+              <p class="skill-desc">Sử dụng tốt tin học văn phòng, có ý thức kỷ luật, luôn chủ động học hỏi kinh nghiệm từ mọi người xung quanh.</p>
+            </div>
+          </div>
+
+          <!-- Snowy Barking Vignette -->
+          <div class="snowy-action-banner">
+            <div class="snowy-art-col">
+              <img src="assets/images/snowy-barking.jpg" alt="Snowy nhảy lên sủa mừng rỡ" class="snowy-action-img">
+            </div>
+            <div class="snowy-message-col">
+              <div class="comic-sound-effect">WOOF! WOOF! GÂU GÂU!</div>
+              <div class="dialogue-balloon balloon-yellow">
+                <span class="balloon-speaker">Milou (Snowy) nhảy cẫng lên mừng rỡ:</span>
+                <p>
+                  "Gâu gâu! Đạt chứng chỉ HSK6 và HSKK CC là sự động viên lớn, nhưng cô chủ luôn tự nhủ phải khiêm tốn học hỏi thêm kinh nghiệm thực tế!"
+                </p>
+              </div>
+              <div class="region-next-action">
+                <button class="comic-btn btn-sm btn-guide-next" data-next="vung-contact">
+                  <span>Tiếp tục đến Trạm 4: Trạm Liên Hệ ➔</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: VÙNG 4 - TRẠM BƯU ĐIỆN VIỄN THÔNG (LIÊN HỆ) -->
+    <section class="comic-section region-section" id="vung-contact">
+      <div class="comic-container">
+        <div class="comic-panel-frame">
+          <div class="comic-narrator-box narrator-contact">
+            <span class="narrator-time">VÙNG ĐẤT 4 • TRẠM VIỄN THÔNG & ĐIỆN TÍN QUỐC TẾ...</span>
+            <p>
+              "Nơi kết nối mọi cơ hội học tập và trải nghiệm! Nguyễn Thị Ngoan luôn sẵn sàng đón nhận các cơ hội thực tập, học việc và các dự án công việc phù hợp với năng lực tiếng Trung."
+            </p>
+          </div>
+
+          <div class="contact-telegraph-grid">
+            <!-- Left: Direct Telegraph Connect Cards -->
+            <div class="telegraph-card-col">
+              <div class="telegraph-terminal">
+                <div class="terminal-header">
+                  <span class="morse-dots">● ● ● ▬ ▬ ▬ ● ● ●</span>
+                  <span class="terminal-title">POSTE DE TÉLÉGRAPHE • BƯU ĐIỆN TRUNG TÂM</span>
+                </div>
+
+                <!-- Zalo Card -->
+                <div class="contact-channel-card channel-zalo">
+                  <div class="channel-icon-col">
+                    <div class="channel-avatar">💬</div>
+                  </div>
+                  <div class="channel-info-col">
+                    <span class="channel-type">KÊNH KẾT NỐI NHANH • ZALO</span>
+                    <h3 class="channel-detail" id="zalo-display">0357296623</h3>
+                    <p class="channel-note">Nhắn tin trực tiếp qua số điện thoại Zalo cá nhân</p>
+                  </div>
+                  <div class="channel-btn-col">
+                    <button class="comic-btn btn-copy" data-copy="0357296623" id="copy-zalo-btn">
+                      <span>📋 Sao Chép Số</span>
+                    </button>
+                    <a href="https://zalo.me/0357296623" target="_blank" rel="noopener noreferrer" class="comic-btn btn-action" id="open-zalo-btn">
+                      <span>Mở Zalo ➔</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Gmail Card -->
+                <div class="contact-channel-card channel-gmail">
+                  <div class="channel-icon-col">
+                    <div class="channel-avatar">✉️</div>
+                  </div>
+                  <div class="channel-info-col">
+                    <span class="channel-type">THƯ ĐIỆN TỬ CHÍNH THỨC • GMAIL</span>
+                    <h3 class="channel-detail email-text" id="gmail-display">ngoanngoan0357@gmail.com</h3>
+                    <p class="channel-note">Phù hợp cho thư mời phỏng vấn, hồ sơ tuyển dụng và trao đổi công việc</p>
+                  </div>
+                  <div class="channel-btn-col">
+                    <button class="comic-btn btn-copy" data-copy="ngoanngoan0357@gmail.com" id="copy-email-btn">
+                      <span>📋 Sao Chép Email</span>
+                    </button>
+                    <a href="mailto:ngoanngoan0357@gmail.com?subject=[FTU%20Tuyển%20Dụng]%20Cơ%20Hội%20Hợp%20Tác%20Cùng%20Nguyễn%20Thị%20Ngoan" class="comic-btn btn-action" id="send-email-btn">
+                      <span>Soạn Email ➔</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Address & Location Card -->
+                <div class="contact-channel-card channel-location">
+                  <div class="channel-icon-col">
+                    <div class="channel-avatar">📍</div>
+                  </div>
+                  <div class="channel-info-col">
+                    <span class="channel-type">ĐỊA BÀN HOẠT ĐỘNG HIỆN TẠI</span>
+                    <h3 class="channel-detail loc-text">Chùa Láng, Láng Thượng, Đống Đa, Hà Nội</h3>
+                    <p class="channel-note">Thuận tiện cho công việc tại khu vực trung tâm Hà Nội hoặc trực tuyến</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Telegram Form -->
+            <div class="telegraph-form-col">
+              <div class="vintage-telegraph-form-box">
+                <div class="form-stamp-top">
+                  <span>TELEGRAMME OFFICIEL</span>
+                  <span class="form-seq">N° 2026-FTU-0357</span>
+                </div>
+
+                <h3 class="telegram-form-title">GỬI BỨC ĐIỆN TÍN CHO NGOAN & SNOWY</h3>
+                <p class="telegram-form-desc">
+                  Điền thông điệp bên dưới để gửi tin nhắn thử nghiệm. Khi gửi thành công, <strong>Snowy sẽ sủa ăn mừng</strong> để xác nhận!
+                </p>
+
+                <form id="telegram-form" class="comic-form">
+                  <div class="form-group">
+                    <label for="sender-name">HỌ VÀ TÊN / DOANH NGHIỆP CỦA BẠN:</label>
+                    <input type="text" id="sender-name" class="comic-input" placeholder="Ví dụ: Công ty Xuất Nhập Khẩu Quốc Tế Á Châu" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sender-contact">SỐ ĐIỆN THOẠI HOẶC EMAIL LIÊN HỆ:</label>
+                    <input type="text" id="sender-contact" class="comic-input" placeholder="Ví dụ: contact@company.com hoặc 0912..." required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message-content">NỘI DUNG ĐIỆN TÍN / LỜI NHẮN:</label>
+                    <textarea id="message-content" class="comic-textarea" rows="4" placeholder="Chào Ngoan, chúng tôi rất ấn tượng với điểm số GPA 3.62 và chứng chỉ HSK6 của bạn..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="comic-btn btn-telegram-send" id="submit-telegram-btn">
+                    <span>⚡ Gửi Bức Điện Tín Ngay! (Phát Tiếng Sủa)</span>
+                  </button>
+                </form>
+
+                <div id="telegram-success-msg" class="telegram-feedback hidden">
+                  <div class="feedback-badge">ĐÃ PHÁT TÍN HIỆU THÀNH CÔNG!</div>
+                  <p>
+                    "Tút tút tút... Gâu gâu! Bức điện tín đã được chuyển đến hòm thư <strong>ngoanngoan0357@gmail.com</strong>! Ngoan sẽ phản hồi sớm nhất có thể!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING INTERACTIVE SNOWY COMPANION WIDGET -->
+  <aside class="snowy-companion-widget" id="snowy-companion-widget" aria-label="Chú chó Snowy đồng hành">
+    <div class="snowy-speech-balloon" id="snowy-speech-balloon">
+      <div class="balloon-close-btn" id="close-speech-btn" title="Ẩn lời thoại">✕</div>
+      <p id="snowy-speech-text">
+        "Gâu gâu! Bấm vào tôi để tôi dẫn bạn đi khám phá từng vùng nhé!"
+      </p>
+      <div class="balloon-buttons">
+        <button class="balloon-btn" id="snowy-bubble-walk-btn">Dẫn đường đi tiếp 🐾</button>
+        <button class="balloon-btn btn-woof" id="snowy-bubble-bark-btn">Sủa 'Gâu gâu' 🐕</button>
+      </div>
+    </div>
+
+    <div class="snowy-sprite-container" id="snowy-guide-mascot" title="Bấm vào chú chó Snowy để nghe sủa!">
+      <div class="snowy-sparkles">✨</div>
+      <img src="assets/images/snowy-guide.jpg" alt="Chú chó Snowy Milou vẫy đuôi" class="snowy-character-img" id="snowy-clickable-avatar">
+      <div class="snowy-click-hint">Bấm vào em! 🐶</div>
+    </div>
+  </aside>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div id="comic-toast" class="comic-toast hidden" role="alert">
+    <span class="toast-icon">🐾</span>
+    <span class="toast-message" id="toast-message">Đã sao chép vào bộ nhớ tạm!</span>
+  </div>
+
+  <!-- AUDIO ELEMENTS (HTML5 Audio Fallback & Web Audio API) -->
+  <audio id="audio-bark-double" preload="auto" src="assets/sounds/snowy-bark-double.wav"></audio>
+  <audio id="audio-bark-single" preload="auto" src="assets/sounds/snowy-bark-single.wav"></audio>
+  <audio id="audio-bark-yip" preload="auto" src="assets/sounds/snowy-yip.wav"></audio>
+
+  <!-- FOOTER -->
+  <footer class="comic-footer">
+    <div class="comic-container footer-content">
+      <div class="footer-tintin-brand">
+        <span class="footer-logo">🐾 LES AVENTURES DE NGUYỄN THỊ NGOAN & MILOU</span>
+        <p class="footer-copy">
+          Được thiết kế theo phong cách truyện tranh Tintin kinh điển của họa sĩ Hergé (Ligne Claire). Bản quyền nội dung © 2026 Nguyễn Thị Ngoan • Đại Học Ngoại Thương (FTU).
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Về Trang Bìa</a>
+        <a href="#interactive-map">Bản Đồ Thám Hiểm</a>
+        <a href="#vung-ftu">Ngoại Thương (FTU)</a>
+        <a href="#vung-hsk6">HSK 6</a>
+        <a href="#vung-contact">Liên Hệ Zalo & Gmail</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

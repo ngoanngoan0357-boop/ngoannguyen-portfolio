@@ -1,0 +1,2062 @@
+/* ==========================================================================
+   TINTIN & SNOWY (MILOU) PORTFOLIO DESIGN SYSTEM
+   Ligne Claire Comic Aesthetics • Nguyễn Thị Ngoan • Foreign Trade University (FTU)
+   ========================================================================== */
+
+:root {
+  /* Classic Hergé Ligne Claire Palette */
+  --tintin-ink: #18191f;
+  --tintin-paper: #faf6ed;
+  --tintin-paper-card: #ffffff;
+  --tintin-paper-accent: #f2ebd9;
+  
+  --tintin-red: #e63946;
+  --tintin-red-dark: #b71c1c;
+  --tintin-yellow: #ffb703;
+  --tintin-yellow-light: #fff3c4;
+  --tintin-yellow-warm: #fb8500;
+  --tintin-blue: #1d3557;
+  --tintin-blue-light: #457b9d;
+  --tintin-sky: #a8dadc;
+  --tintin-green: #2a9d8f;
+  --tintin-gold: #d4af37;
+
+  /* Comic Borders & Shadows */
+  --comic-border-thick: 3px solid var(--tintin-ink);
+  --comic-border-mid: 2px solid var(--tintin-ink);
+  --comic-border-thin: 1.5px solid var(--tintin-ink);
+  --comic-shadow-sm: 3px 3px 0 var(--tintin-ink);
+  --comic-shadow-md: 5px 5px 0 var(--tintin-ink);
+  --comic-shadow-lg: 8px 8px 0 var(--tintin-ink);
+  --comic-shadow-red: 5px 5px 0 var(--tintin-red);
+  --comic-shadow-yellow: 5px 5px 0 var(--tintin-yellow-warm);
+
+  /* Typography */
+  --font-comic: 'Bangers', cursive, sans-serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+
+  --radius-comic: 12px;
+  --radius-comic-sm: 8px;
+  --transition-comic: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+body.tintin-theme {
+  background-color: var(--tintin-paper);
+  color: var(--tintin-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Vintage Paper Texture & Comic Halftone Dots Background */
+.comic-paper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.22;
+  background-image: 
+    radial-gradient(#d3c6a6 1px, transparent 1px),
+    linear-gradient(rgba(240, 230, 205, 0.05) 50%, rgba(0, 0, 0, 0.02) 50%);
+  background-size: 24px 24px, 100% 4px;
+}
+
+/* Layout Containers */
+.comic-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.comic-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--tintin-paper);
+  border-bottom: var(--comic-border-thick);
+  box-shadow: 0 4px 15px rgba(24, 25, 31, 0.08);
+}
+
+.header-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.vintage-badge {
+  display: flex;
+  flex-direction: column;
+  background: var(--tintin-ink);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transform: rotate(-1.5deg);
+  border: 1px dashed var(--tintin-yellow);
+}
+
+.badge-edition {
+  font-family: var(--font-comic);
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: var(--tintin-yellow);
+}
+
+.badge-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-main-title {
+  text-align: center;
+}
+
+.brand-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--tintin-ink);
+  transition: transform 0.2s ease;
+}
+
+.brand-link:hover {
+  transform: scale(1.02);
+}
+
+.brand-pre {
+  font-family: var(--font-comic);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  color: var(--tintin-red);
+}
+
+.brand-name {
+  font-family: var(--font-comic);
+  font-size: 1.85rem;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  text-shadow: 2px 2px 0 var(--tintin-yellow);
+}
+
+.brand-companion {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--tintin-blue);
+  letter-spacing: 1px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Comic Navigation Bar */
+.comic-nav {
+  background: var(--tintin-yellow);
+  border-top: var(--comic-border-mid);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--tintin-ink);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition-comic);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #fff;
+  border-bottom: 3px solid var(--tintin-red);
+  transform: translateY(-2px);
+}
+
+.nav-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--tintin-ink);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ========================================================================== */
+.comic-btn {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  padding: 10px 18px;
+  border: var(--comic-border-thick);
+  border-radius: var(--radius-comic-sm);
+  background: #ffffff;
+  color: var(--tintin-ink);
+  box-shadow: var(--comic-shadow-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: var(--transition-comic);
+  user-select: none;
+}
+
+.comic-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--comic-shadow-md);
+}
+
+.comic-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--tintin-ink);
+}
+
+.btn-primary {
+  background: var(--tintin-red);
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 14px 26px;
+}
+
+.btn-primary:hover {
+  background: var(--tintin-red-dark);
+  box-shadow: var(--comic-shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--tintin-yellow);
+  color: var(--tintin-ink);
+  font-size: 1.25rem;
+  padding: 14px 22px;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--tintin-blue);
+  font-size: 1.25rem;
+  padding: 14px 22px;
+}
+
+.btn-sound {
+  background: #ffffff;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+}
+
+.btn-bark-test {
+  background: var(--tintin-yellow-light);
+  font-size: 0.95rem;
+  padding: 8px 14px;
+}
+
+.btn-copy {
+  background: #ffffff;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+}
+
+.btn-action {
+  background: var(--tintin-blue);
+  color: #ffffff;
+  font-size: 1.05rem;
+  padding: 8px 16px;
+}
+
+.btn-action:hover {
+  background: var(--tintin-blue-light);
+}
+
+.btn-guide-next {
+  background: var(--tintin-yellow);
+  font-size: 1.05rem;
+  padding: 10px 18px;
+  width: 100%;
+}
+
+.btn-sm {
+  font-size: 0.95rem;
+  padding: 6px 12px;
+}
+
+/* ==========================================================================
+   HERO ALBUM COVER SECTION
+   ========================================================================== */
+.hero-section {
+  padding: 40px 0 60px;
+}
+
+.album-cover-frame {
+  background: var(--tintin-paper-card);
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-lg);
+  border-radius: var(--radius-comic);
+  position: relative;
+  padding: 36px 32px;
+  overflow: hidden;
+}
+
+.album-spine-ribbon {
+  position: absolute;
+  top: 14px;
+  left: -40px;
+  transform: rotate(-45deg);
+  background: var(--tintin-red);
+  color: #fff;
+  font-family: var(--font-comic);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 6px 45px;
+  border-top: var(--comic-border-thin);
+  border-bottom: var(--comic-border-thin);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-panel-polaroid {
+  background: #fff;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic-sm);
+  padding: 14px 14px 20px;
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.hero-panel-polaroid:hover {
+  transform: rotate(0deg) scale(1.01);
+}
+
+.panel-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 26px;
+  background: rgba(255, 235, 170, 0.85);
+  border: 1px dashed rgba(160, 130, 70, 0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.cover-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: var(--comic-border-mid);
+  border-radius: 6px;
+}
+
+.hero-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-cover-img:hover {
+  transform: scale(1.03);
+}
+
+.cover-overlay-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--tintin-yellow);
+  color: var(--tintin-ink);
+  font-family: var(--font-comic);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: var(--comic-border-thin);
+  box-shadow: 2px 2px 0 var(--tintin-ink);
+}
+
+.caption-note {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.caption-handwritten {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: #4a4a4a;
+}
+
+/* Hero Content Column */
+.speech-intro-bubble {
+  background: var(--tintin-yellow-light);
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: var(--radius-comic);
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.speech-intro-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--tintin-yellow-light);
+}
+
+.bubble-speaker {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-tag {
+  font-family: var(--font-comic);
+  color: var(--tintin-red);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.speech-quote {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--tintin-blue);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.badge-pill {
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border: var(--comic-border-thin);
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 2px 2px 0 var(--tintin-ink);
+}
+
+.bg-red { background: var(--tintin-red); }
+.bg-yellow { background: var(--tintin-yellow-warm); color: var(--tintin-ink); }
+.bg-blue { background: var(--tintin-blue); }
+
+.hero-title {
+  font-family: var(--font-editorial);
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--tintin-ink);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-comic);
+  font-size: 1.35rem;
+  color: var(--tintin-red);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.hero-bio-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333333;
+  margin-bottom: 24px;
+}
+
+/* Quick Stats Grid */
+.quick-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat-box {
+  background: var(--tintin-paper);
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: var(--radius-comic-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-family: var(--font-comic);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  color: #555555;
+  font-weight: 600;
+}
+
+.hero-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-paw {
+  font-size: 1.2rem;
+  animation: pawWiggle 1.5s infinite ease-in-out;
+}
+
+@keyframes pawWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg) scale(1.1); }
+}
+
+/* ==========================================================================
+   INTERACTIVE MAP SECTION
+   ========================================================================== */
+.map-section {
+  padding: 60px 0;
+  background: #f4ecdc;
+  border-top: var(--comic-border-thick);
+  border-bottom: var(--comic-border-thick);
+}
+
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.chapter-badge {
+  display: inline-block;
+  font-family: var(--font-comic);
+  background: var(--tintin-red);
+  color: #fff;
+  padding: 4px 14px;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.comic-section-heading {
+  font-family: var(--font-comic);
+  font-size: 2.8rem;
+  letter-spacing: 1.5px;
+  color: var(--tintin-ink);
+  line-height: 1.15;
+  text-shadow: 2px 2px 0 var(--tintin-yellow);
+}
+
+.section-subtext {
+  max-width: 720px;
+  margin: 10px auto 0;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.map-board-container {
+  background: #e9dfca;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-lg);
+  border-radius: var(--radius-comic);
+  padding: 24px;
+  position: relative;
+}
+
+.map-artwork-wrapper {
+  position: relative;
+  border: var(--comic-border-thick);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+  background: #fbf7ee;
+}
+
+.map-background-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.03) saturate(1.05);
+}
+
+/* Interactive Pins on Map */
+.map-hotspots-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.map-pin {
+  position: absolute;
+  pointer-events: auto;
+  background: #ffffff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transform: translate(-50%, -50%);
+  transition: var(--transition-comic);
+  z-index: 20;
+}
+
+.map-pin:hover {
+  transform: translate(-50%, -60%) scale(1.1);
+  background: var(--tintin-yellow);
+  box-shadow: var(--comic-shadow-md);
+}
+
+.map-pin.active {
+  background: var(--tintin-red);
+  color: #ffffff;
+  box-shadow: var(--comic-shadow-red);
+}
+
+.map-pin.active .pin-tag {
+  color: #ffffff;
+}
+
+.pin-marker {
+  font-size: 1.25rem;
+}
+
+.pin-tag {
+  font-family: var(--font-comic);
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  color: var(--tintin-ink);
+  white-space: nowrap;
+}
+
+.pin-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  border: 2px solid var(--tintin-red);
+  animation: pulseRipple 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes pulseRipple {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* Pin positions matched to generated map features */
+.pin-namdinh { top: 72%; left: 24%; }
+.pin-ftu { top: 48%; left: 47%; }
+.pin-hsk6 { top: 32%; left: 71%; }
+.pin-contact { top: 62%; left: 83%; }
+
+/* Moving Animated Snowy Mini Marker on Map */
+.snowy-map-avatar {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  transition: top 0.9s cubic-bezier(0.25, 1, 0.5, 1), left 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 25;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.snowy-map-mini-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: var(--comic-border-thick);
+  background: #fff;
+  box-shadow: var(--comic-shadow-sm);
+  animation: miniSnowyBounce 1.2s infinite ease-in-out;
+}
+
+@keyframes miniSnowyBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.snowy-avatar-bubble {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-family: var(--font-comic);
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.snowy-avatar-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+}
+
+/* Map Selector Cards below map */
+.map-cards-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.station-card {
+  background: #ffffff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: var(--radius-comic-sm);
+  padding: 14px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  transition: var(--transition-comic);
+}
+
+.station-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--comic-shadow-md);
+  border-color: var(--tintin-red);
+}
+
+.station-card.active {
+  background: var(--tintin-yellow-light);
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-red);
+}
+
+.st-num {
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  color: var(--tintin-red);
+  letter-spacing: 1px;
+}
+
+.st-title {
+  font-family: var(--font-comic);
+  font-size: 1.25rem;
+  color: var(--tintin-ink);
+  line-height: 1.1;
+}
+
+.st-desc {
+  font-size: 0.82rem;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.st-jump-btn {
+  font-family: var(--font-comic);
+  background: var(--tintin-paper);
+  border: var(--comic-border-thin);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s ease;
+}
+
+.station-card:hover .st-jump-btn,
+.station-card.active .st-jump-btn {
+  background: var(--tintin-red);
+  color: #fff;
+}
+
+/* ==========================================================================
+   COMIC CHAPTERS / REGIONS STYLING
+   ========================================================================== */
+.region-section {
+  padding: 60px 0;
+}
+
+.comic-panel-frame {
+  background: #ffffff;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-lg);
+  border-radius: var(--radius-comic);
+  padding: 28px;
+}
+
+/* Comic Narrator Yellow Box */
+.comic-narrator-box {
+  background: var(--tintin-yellow);
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  padding: 16px 22px;
+  border-radius: 6px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.narrator-time {
+  font-family: var(--font-comic);
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  color: var(--tintin-red);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.comic-narrator-box p {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--tintin-ink);
+  line-height: 1.5;
+}
+
+/* Strip Layout: 2 Columns */
+.comic-strip-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}
+
+.comic-box {
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic-sm);
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header-bar {
+  background: var(--tintin-ink);
+  color: #ffffff;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-comic);
+}
+
+.panel-chapter-no {
+  color: var(--tintin-yellow);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.panel-title {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.panel-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vignette-icon-circle {
+  width: 50px;
+  height: 50px;
+  background: var(--tintin-yellow-light);
+  border: var(--comic-border-mid);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.panel-h3 {
+  font-family: var(--font-comic);
+  font-size: 1.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: var(--tintin-blue);
+}
+
+.panel-para {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.comic-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.comic-bullet-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.comic-bullet-list li::before {
+  content: '🐾';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.05rem;
+}
+
+/* Comic Speech / Dialogue Balloons */
+.dialogue-balloon-wrap {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.dialogue-balloon {
+  background: #ffffff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: 16px;
+  padding: 14px 18px;
+  position: relative;
+}
+
+.dialogue-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--tintin-ink);
+}
+
+.balloon-speaker {
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  color: var(--tintin-red);
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.dialogue-balloon p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--tintin-ink);
+  line-height: 1.4;
+}
+
+.balloon-blue {
+  background: #edf6f9;
+}
+
+.balloon-yellow {
+  background: #fff8e1;
+}
+
+/* Travel Diary in Region 1 */
+.travel-diary-page {
+  background: var(--tintin-paper);
+  border: 1px dashed #b8a682;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.diary-title {
+  font-family: var(--font-comic);
+  font-size: 1.25rem;
+  color: var(--tintin-red);
+  letter-spacing: 1px;
+}
+
+.diary-entry {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.diary-date {
+  font-weight: 700;
+  color: var(--tintin-blue);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stamp-collection {
+  display: flex;
+  gap: 14px;
+  margin: 10px 0;
+}
+
+.retro-stamp {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border: 2px dashed #999;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transform: rotate(-3deg);
+}
+
+.stamp-express {
+  transform: rotate(4deg);
+  border-color: var(--tintin-red);
+}
+
+.stamp-icon {
+  font-size: 1.6rem;
+}
+
+.stamp-text {
+  font-family: var(--font-comic);
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+}
+
+.stamp-val {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--tintin-red);
+}
+
+/* ==========================================================================
+   VÙNG 2: ĐẠI HỌC NGOẠI THƯƠNG (FTU)
+   ========================================================================== */
+.ftu-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.badge-ftu-crest {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--tintin-paper);
+  border: var(--comic-border-mid);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.crest-symbol {
+  font-size: 2.2rem;
+}
+
+.crest-text h4 {
+  font-family: var(--font-comic);
+  font-size: 1.35rem;
+  color: var(--tintin-red);
+  letter-spacing: 1px;
+}
+
+.crest-text span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.cv-data-table {
+  background: #ffffff;
+  border: var(--comic-border-thin);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 0.95rem;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  font-weight: 700;
+  color: #444;
+}
+
+.data-value {
+  font-weight: 600;
+  color: var(--tintin-ink);
+  text-align: right;
+}
+
+.data-value.highlight {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  color: var(--tintin-red);
+}
+
+.data-value.code-font {
+  font-family: monospace;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-weight: 700;
+}
+
+.data-value.bold-blue {
+  color: var(--tintin-blue);
+  font-weight: 800;
+}
+
+.data-value.gpa-score {
+  font-family: var(--font-comic);
+  font-size: 1.25rem;
+  color: var(--tintin-green);
+  background: #e8f5e9;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #a5d6a7;
+}
+
+/* GPA Gauge Bar */
+.gpa-gauge-card {
+  background: var(--tintin-yellow-light);
+  border: var(--comic-border-mid);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.gauge-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-comic);
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.gauge-bar-track {
+  width: 100%;
+  height: 16px;
+  background: #ffffff;
+  border: var(--comic-border-thin);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tintin-yellow) 0%, var(--tintin-green) 100%);
+  border-radius: 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+.gauge-caption {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #555;
+  display: block;
+}
+
+/* Feature Stripes */
+.feature-stripes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ftu-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--tintin-paper);
+  border: var(--comic-border-thin);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.feature-text h5 {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  color: var(--tintin-blue);
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   VÙNG 3: ĐỈNH CAO HSK 6 & HSKK CAO CẤP
+   ========================================================================== */
+.cert-showcase-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.cert-gold-card {
+  background: linear-gradient(135deg, #fffdf7 0%, #fff6dd 100%);
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-hskk {
+  background: linear-gradient(135deg, #f7faff 0%, #e8f0fe 100%);
+}
+
+.cert-ribbon-tag {
+  position: absolute;
+  top: 16px;
+  right: -30px;
+  transform: rotate(45deg);
+  background: var(--tintin-red);
+  color: #fff;
+  font-family: var(--font-comic);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  padding: 4px 34px;
+  border-top: var(--comic-border-thin);
+  border-bottom: var(--comic-border-thin);
+}
+
+.tag-blue {
+  background: var(--tintin-blue);
+}
+
+.cert-seal {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+.cert-main-name {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  color: var(--tintin-ink);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.cert-sub {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.cert-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--tintin-yellow-warm);
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.cert-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.cert-perks li strong {
+  color: var(--tintin-red);
+}
+
+/* Skills Comic Grid */
+.skills-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.skill-card-panel {
+  background: #ffffff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: var(--radius-comic-sm);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--transition-comic);
+}
+
+.skill-card-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--comic-shadow-md);
+  border-color: var(--tintin-red);
+}
+
+.skill-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: var(--tintin-yellow-light);
+  border: var(--comic-border-thin);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.skill-title {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  color: var(--tintin-ink);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.skill-desc {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Snowy Barking Action Banner */
+.snowy-action-banner {
+  background: var(--tintin-paper);
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.snowy-art-col {
+  border: var(--comic-border-mid);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--comic-shadow-sm);
+  background: #fff;
+}
+
+.snowy-action-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.comic-sound-effect {
+  font-family: var(--font-comic);
+  font-size: 2.4rem;
+  color: var(--tintin-red);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 var(--tintin-yellow);
+  animation: sfxWobble 1.8s infinite ease-in-out;
+  margin-bottom: 12px;
+}
+
+@keyframes sfxWobble {
+  0%, 100% { transform: rotate(-2deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.04); }
+}
+
+/* ==========================================================================
+   VÙNG 4: BƯU CỤC VIỄN THÔNG (LIÊN HỆ)
+   ========================================================================== */
+.contact-telegraph-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+}
+
+.telegraph-terminal {
+  background: #ffffff;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminal-header {
+  border-bottom: var(--comic-border-mid);
+  padding-bottom: 12px;
+  margin-bottom: 6px;
+}
+
+.morse-dots {
+  display: block;
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: var(--tintin-red);
+  margin-bottom: 4px;
+}
+
+.terminal-title {
+  font-family: var(--font-comic);
+  font-size: 1.25rem;
+  color: var(--tintin-ink);
+  letter-spacing: 1px;
+}
+
+.contact-channel-card {
+  background: var(--tintin-paper);
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: var(--radius-comic-sm);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  transition: var(--transition-comic);
+}
+
+.contact-channel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--comic-shadow-md);
+  background: #fff;
+}
+
+.channel-avatar {
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: var(--comic-border-thin);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.channel-type {
+  font-family: var(--font-comic);
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: var(--tintin-red);
+}
+
+.channel-detail {
+  font-family: var(--font-comic);
+  font-size: 1.45rem;
+  letter-spacing: 1px;
+  color: var(--tintin-ink);
+  line-height: 1.15;
+}
+
+.email-text {
+  font-size: 1.2rem;
+}
+
+.loc-text {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.channel-note {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+.channel-btn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Vintage Telegraph Form */
+.vintage-telegraph-form-box {
+  background: #fffef9;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: var(--radius-comic);
+  padding: 24px;
+  position: relative;
+}
+
+.form-stamp-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px dashed #bbb;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--tintin-blue);
+}
+
+.telegram-form-title {
+  font-family: var(--font-comic);
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: var(--tintin-ink);
+  margin-bottom: 6px;
+}
+
+.telegram-form-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.comic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-comic);
+  font-size: 0.9rem;
+  letter-spacing: 0.8px;
+  color: var(--tintin-ink);
+}
+
+.comic-input,
+.comic-textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border: var(--comic-border-mid);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--tintin-ink);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comic-input:focus,
+.comic-textarea:focus {
+  border-color: var(--tintin-red);
+  box-shadow: 2px 2px 0 var(--tintin-ink);
+}
+
+.btn-telegram-send {
+  background: var(--tintin-yellow);
+  font-size: 1.25rem;
+  padding: 14px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.telegram-feedback {
+  margin-top: 18px;
+  background: #e8f5e9;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-sm);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.telegram-feedback.hidden {
+  display: none;
+}
+
+.feedback-badge {
+  font-family: var(--font-comic);
+  font-size: 0.95rem;
+  color: #2e7d32;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.telegram-feedback p {
+  font-size: 0.92rem;
+  color: #1b5e20;
+}
+
+/* ==========================================================================
+   FLOATING INTERACTIVE SNOWY COMPANION WIDGET
+   ========================================================================== */
+.snowy-companion-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.snowy-speech-balloon {
+  pointer-events: auto;
+  background: #ffffff;
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: 16px;
+  padding: 14px 18px;
+  max-width: 280px;
+  margin-bottom: 12px;
+  position: relative;
+  animation: balloonFloat 3s infinite ease-in-out;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.snowy-speech-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  right: 36px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid var(--tintin-ink);
+}
+
+@keyframes balloonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.balloon-close-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balloon-close-btn:hover {
+  color: var(--tintin-red);
+}
+
+#snowy-speech-text {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--tintin-ink);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.balloon-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.balloon-btn {
+  font-family: var(--font-comic);
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  background: var(--tintin-yellow);
+  border: var(--comic-border-thin);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.balloon-btn:hover {
+  background: var(--tintin-yellow-warm);
+}
+
+.balloon-btn.btn-woof {
+  background: var(--tintin-red);
+  color: #ffffff;
+}
+
+.snowy-sprite-container {
+  pointer-events: auto;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.snowy-sprite-container:hover {
+  transform: scale(1.1) rotate(4deg);
+}
+
+.snowy-sprite-container:active {
+  transform: scale(0.95);
+}
+
+.snowy-character-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: var(--comic-border-thick);
+  background: #ffffff;
+  box-shadow: var(--comic-shadow-md);
+  object-fit: cover;
+}
+
+.snowy-sparkles {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  font-size: 1.2rem;
+  animation: sparkleTwinkle 1.5s infinite alternate;
+}
+
+@keyframes sparkleTwinkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+.snowy-click-hint {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--tintin-red);
+  color: #fff;
+  font-family: var(--font-comic);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--tintin-ink);
+  white-space: nowrap;
+  box-shadow: 1px 1px 0 var(--tintin-ink);
+}
+
+/* Animated Bark Bubble Effect (Screen Center/Dynamic) */
+.bark-bubble-fx {
+  position: fixed;
+  bottom: 140px;
+  right: 140px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.4) rotate(-15deg);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+  background: var(--tintin-yellow);
+  border: var(--comic-border-thick);
+  box-shadow: var(--comic-shadow-lg);
+  padding: 10px 22px;
+  border-radius: 30px;
+}
+
+.bark-bubble-fx.show {
+  opacity: 1;
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.bark-text {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--tintin-red);
+  text-shadow: 2px 2px 0 #fff;
+}
+
+/* Toast Notification */
+.comic-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--tintin-ink);
+  color: #ffffff;
+  border: var(--comic-border-mid);
+  box-shadow: var(--comic-shadow-md);
+  border-radius: 8px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  z-index: 1001;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.comic-toast.hidden {
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.comic-footer {
+  background: var(--tintin-ink);
+  color: #ffffff;
+  padding: 40px 0;
+  border-top: var(--comic-border-thick);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-tintin-brand .footer-logo {
+  font-family: var(--font-comic);
+  font-size: 1.35rem;
+  color: var(--tintin-yellow);
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-copy {
+  font-size: 0.88rem;
+  color: #bbb;
+  max-width: 580px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--tintin-yellow);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & PHONES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .skills-comic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-cards-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .snowy-action-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .comic-strip-layout,
+  .ftu-showcase-grid,
+  .cert-showcase-row,
+  .contact-telegraph-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-cards-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channel-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .channel-avatar {
+    margin: 0 auto;
+  }
+
+  .channel-btn-col {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .comic-section-heading {
+    font-size: 2.1rem;
+  }
+
+  .snowy-companion-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .snowy-speech-balloon {
+    max-width: 230px;
+  }
+
+  .snowy-sprite-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pin-tag {
+    display: none;
+  }
+}
